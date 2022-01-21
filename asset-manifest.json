@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/rahul-rentals-client/static/css/main.369c0a80.css",
+    "main.js": "/rahul-rentals-client/static/js/main.8de37787.js",
+    "static/js/787.db9b214f.chunk.js": "/rahul-rentals-client/static/js/787.db9b214f.chunk.js",
+    "index.html": "/rahul-rentals-client/index.html",
+    "main.369c0a80.css.map": "/rahul-rentals-client/static/css/main.369c0a80.css.map",
+    "main.8de37787.js.map": "/rahul-rentals-client/static/js/main.8de37787.js.map",
+    "787.db9b214f.chunk.js.map": "/rahul-rentals-client/static/js/787.db9b214f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.369c0a80.css",
+    "static/js/main.8de37787.js"
+  ]
+}
