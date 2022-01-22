@@ -1,6 +1,6 @@
 
 import './App.css';
-import {Route, Routes, BrowserRouter, Navigate} from 'react-router-dom';
+import {Route, Routes, BrowserRouter,HashRouter, Navigate} from 'react-router-dom';
 import Home from './pages/Home';
 import BookingCar from './pages/BookingCar';
 import 'antd/dist/antd.css';
@@ -18,7 +18,7 @@ function App() {
 
       
       
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           
 
@@ -33,7 +33,7 @@ function App() {
           
 
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </div> 
   );
 }
