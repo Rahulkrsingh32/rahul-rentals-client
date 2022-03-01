@@ -1,20 +1,20 @@
 import React, {useState, useEffect} from 'react'
 import DefaultLayout from '../components/DefaultLayout'
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllCars } from '../redux/actions/carsAction';
+import { getAllBoats } from '../redux/actions/boatsAction';
 import {  Row, Col, DatePicker } from 'antd';
 import Spinner from '../components/Spinner';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 const { RangePicker } = DatePicker
 function Home() {
-    const {cars} = useSelector(state=>state.carsReducer)
+    const {cars} = useSelector(state=>state.boatsReducer)
     const {loading} = useSelector(state=>state.alertsReducer)
     const [totalCars, setTotalCars] = useState([])
     const dispatch = useDispatch()
 
 useEffect(() => {
-        dispatch(getAllCars())
+        dispatch(getAllBoats())
     
 },[])
 

@@ -50,7 +50,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://rahul-rentall.herokuapp.com/",
+  "proxy": "https://rahul-rental-backend.herokuapp.com/",
   "devDependencies": {
     "mini-css-extract-plugin": "2.4.5"
   },

@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import DefaultLayout from '../components/DefaultLayout'
 import { useParams } from "react-router-dom";
-import { getAllCars } from '../redux/actions/carsAction';
-import { bookCar } from '../redux/actions/bookingAction';
+import { getAllBoats } from '../redux/actions/boatsAction';
+import { bookBoat } from '../redux/actions/bookingAction';
 import { Col, Row, Divider, DatePicker, Checkbox, Modal } from 'antd';
 import Spinner from '../components/Spinner';
 import moment from 'moment';
@@ -15,10 +15,10 @@ AOS.init();
 /* import StripeCheckout from 'react-stripe-checkout'; */
 
 const {RangePicker} = DatePicker
-function BookingCar() {
+function BookingBoat() {
     const params = useParams();
 
-    const {cars} = useSelector(state=>state.carsReducer)
+    const {cars} = useSelector(state=>state.boatsReducer)
     const {loading} = useSelector(state=>state.alertsReducer)
     const [car, setCar] = useState({})
     const [from, setFrom] = useState()
@@ -31,7 +31,7 @@ function BookingCar() {
 
 useEffect(() => {
         if(cars.length==0){
-            dispatch(getAllCars())
+            dispatch(getAllBoats())
         }else {
             setCar(cars.find(o=>o._id==params.carid))
         }
@@ -64,7 +64,7 @@ function bookNow(){
         },
     };
 
-    dispatch(bookCar(reqObj));
+    dispatch(bookBoat(reqObj));
 }
 
 
@@ -86,7 +86,7 @@ function onToken(token){
                 </Col>
 
                 <Col lg={10} sm={24} xs={24} className='text-right' >
-                    <Divider type='horizontal' style={{ fontWeight:"bold" }} > <b>Car Info</b> </Divider>
+                    <Divider type='horizontal' style={{ fontWeight:"bold" }} > <b>Boat Info</b> </Divider>
                     <div  >
                         <p> {car.name} </p>
                         <p> {car.rentPerHour}/- Rent Per Hour </p>
@@ -150,4 +150,4 @@ function onToken(token){
     )
 }
 
-export default BookingCar
+export default BookingBoat

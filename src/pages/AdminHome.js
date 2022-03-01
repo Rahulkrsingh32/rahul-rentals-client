@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import DefaultLayout from '../components/DefaultLayout'
 import { useSelector, useDispatch } from 'react-redux';
-import { getAllCars } from '../redux/actions/carsAction';
-import { deleteCar } from '../redux/actions/carsAction';
+import { getAllBoats } from '../redux/actions/boatsAction';
+import { deleteBoat } from '../redux/actions/boatsAction';
 import { Row, Col, DatePicker, Button } from 'antd';
 import { Popconfirm, message } from 'antd';
 import { DeleteOutlined, EditOutlined } from '@ant-design/icons';
@@ -11,13 +11,13 @@ import { Link } from 'react-router-dom';
 import moment from 'moment';
 const { RangePicker } = DatePicker
 function AdminHome() {
-    const { cars } = useSelector(state => state.carsReducer)
+    const { cars } = useSelector(state => state.boatsReducer)
     const { loading } = useSelector(state => state.alertsReducer)
     const [totalCars, setTotalCars] = useState([])
     const dispatch = useDispatch()
 
     useEffect(() => {
-        dispatch(getAllCars())
+        dispatch(getAllBoats())
 
     }, [])
 
@@ -36,7 +36,7 @@ function AdminHome() {
                 <Col lg={20} sm={24} >
                     <div className='d-flex justify-content-between align-items-center'>
                         <h3 className='mt-1 mr-2' >Admin Panel</h3>
-                        <Button className='btn1' > <Link to='/addcar'>ADD CAR</Link> </Button>
+                        <Button className='btn1' > <Link to='/addboat'>ADD BOATS</Link> </Button>
                     </div>
                 </Col>
             </Row>
@@ -56,10 +56,10 @@ function AdminHome() {
                                 </div>
                                 {localStorage.getItem('user') && (
                                     <div className='mr-4' >
-                                        <Link to={`/editcar/${car._id}`}><EditOutlined className='mr-3' style={{ color: 'green', cursor: 'pointer' }} /></Link>
+                                        <Link to={`/editboat/${car._id}`}><EditOutlined className='mr-3' style={{ color: 'green', cursor: 'pointer' }} /></Link>
                                         <Popconfirm
                                             title="Are you sure to delete this car?"
-                                            onConfirm={()=>{dispatch(deleteCar({ carid : car._id }))}}
+                                            onConfirm={()=>{dispatch(deleteBoat({ carid : car._id }))}}
                                             
                                             okText="Yes"
                                             cancelText="No"

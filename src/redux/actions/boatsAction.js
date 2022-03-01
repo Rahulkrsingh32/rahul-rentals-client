@@ -1,7 +1,7 @@
 import { message } from 'antd';
 import axios from 'axios';
 
-export const getAllCars = () => async dispatch=>{
+export const getAllBoats = () => async dispatch=>{
     dispatch({ type: 'LOADING', payload:true })
 
     try{
@@ -14,14 +14,14 @@ export const getAllCars = () => async dispatch=>{
     }
 }
 
-export const addCar=(reqObj)=>async dispatch=>{
+export const addBoat=(reqObj)=>async dispatch=>{
     dispatch({ type: 'LOADING', payload:true })
 
     try{
         await axios.post('/api/cars/addcar', reqObj)
        
         dispatch({ type: 'LOADING', payload:false })
-        message.success('New Car Added Successfully')
+        message.success('New Boat Added Successfully')
         setTimeout(()=> {
             window.location.href='/admin'
         }, 500);
@@ -31,14 +31,14 @@ export const addCar=(reqObj)=>async dispatch=>{
     }
 }
 
-export const editCar=(reqObj)=>async dispatch=>{
+export const editBoat=(reqObj)=>async dispatch=>{
     dispatch({ type: 'LOADING', payload:true })
 
     try{
         await axios.post('/api/cars/editcar', reqObj)
        
         dispatch({ type: 'LOADING', payload:false })
-        message.success('Car details updated Successfully')
+        message.success('Boat details updated Successfully')
         setTimeout(()=> {
             window.location.href='/admin'
         }, 500);
@@ -48,14 +48,14 @@ export const editCar=(reqObj)=>async dispatch=>{
     }
 }
 
-export const deleteCar=(reqObj)=>async dispatch=>{
+export const deleteBoat=(reqObj)=>async dispatch=>{
     dispatch({ type: 'LOADING', payload:true })
 
     try{
         await axios.post('/api/cars/deletecar', reqObj)
        
         dispatch({ type: 'LOADING', payload:false })
-        message.success('Car deleted Successfully')
+        message.success('Boat deleted Successfully')
         setTimeout(()=> {
             window.location.reload()
         }, 500);

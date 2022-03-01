@@ -112,7 +112,8 @@ p{
   bottom: 50%;
   transform: translateY(-50%, -50%);
   font-size: 45px;
-  opacity: 0.1 !important;
+  opacity: 0.8 !important;
+  color: black;
   
 }
 .login a{

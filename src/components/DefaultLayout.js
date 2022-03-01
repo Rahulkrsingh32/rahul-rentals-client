@@ -1,7 +1,7 @@
 import React from 'react'
 import { Row, Col, Menu, Dropdown, Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { CarOutlined } from '@ant-design/icons';
+import { RadarChartOutlined } from '@ant-design/icons';
 
 
 function DefaultLayout(props) {
@@ -37,7 +37,7 @@ function DefaultLayout(props) {
                 <Row gutter={16} justify='center' >
                     <Col lg={20} sm={24} xs={24} >
                         <div className="d-flex justify-content-between">
-                            <Link to="/"> <b><h1 style={{ color:'orangered' }} ><CarOutlined  /> RahulRentals</h1></b> </Link>
+                            <Link to="/"> <b><h1 style={{ color:'orangered' }} ><RadarChartOutlined style={{ fontSize: '90px' }} /> SeaSenora </h1></b> </Link>
                             {localStorage.getItem('user') && (
                                 <Dropdown overlay={menu} placement="bottomCenter">
                                 <Button> {user.username} </Button>
@@ -62,7 +62,7 @@ function DefaultLayout(props) {
             <hr />
               <p>Designed and Developed By</p>
              
-              <p>Rahul Singh</p>
+              <p>Virtusa Pvt. Ltd.</p>
             </div>
         </div>
     )

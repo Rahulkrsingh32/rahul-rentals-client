@@ -3,12 +3,12 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
 import DefaultLayout from '../components/DefaultLayout';
 import { useDispatch, useSelector } from 'react-redux';
-import { addCar, editCar } from '../redux/actions/carsAction';
-import { getAllCars } from '../redux/actions/carsAction';
+import { addBoat, editBoat } from '../redux/actions/boatsAction';
+import { getAllBoats } from '../redux/actions/boatsAction';
 import Spinner from '../components/Spinner';
-function EditCar() {
+function EditBoat() {
     const params = useParams();
-    const { cars } = useSelector(state => state.carsReducer)
+    const { cars } = useSelector(state => state.boatsReducer)
     const dispatch = useDispatch();
     const { loading } = useSelector(state => state.alertsReducer)
     const [car, setCar] = useState()
@@ -16,7 +16,7 @@ function EditCar() {
     useEffect(() => {
 
         if (cars.length == 0) {
-            dispatch(getAllCars())
+            dispatch(getAllBoats())
         } else {
             setTotalcars(cars)
             setCar(cars.find(o => o._id == params.carid))
@@ -27,7 +27,7 @@ function EditCar() {
     function onFinish(values) {
         values._id = car._id
 
-        dispatch(editCar(values))
+        dispatch(editBoat(values))
         console.log(values)
     }
 
@@ -57,7 +57,7 @@ function EditCar() {
                             </Form.Item>
                             <div className='text-right'>
 
-                                <button className='btn1 ' >EDIT CAR</button>
+                                <button className='btn1 ' >EDIT BOATS</button>
                             </div>
 
                         </Form>
@@ -68,4 +68,4 @@ function EditCar() {
     );
 }
 
-export default EditCar;
+export default EditBoat;
